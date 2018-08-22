@@ -1,3 +1,4 @@
+import subprocess
 import json
 
 with open('conf.json', 'r') as f:
@@ -18,11 +19,15 @@ def update_state(update_dict):
         json.dump(state, f)
 
 def read_uptime_raw():
-    with open(get_conf()['uptimed_records_file'], 'r') as f:
-        line = f.readline()[:-1]
-    tokens = line.split(':')
-    uptime_seconds = int(tokens[0])
-    return uptime_seconds
+    cmd_list = ['tuptime', '-s']
+    identifier = 'System uptime:'
+    tuptime_output = subprocess.check_output(cmd_list).decode('utf-8').splitlines()
+    # print('\n'.join(tuptime_output))
+    for row in tuptime_output:
+        if row.startswith(identifier):
+            uptime_seconds = float(row.split()[-1])
+            return uptime_seconds
+    raise Exception("\'{}\' not found in output from command:  \'{}\'".format(identifier, ' '.join(cmd_list)))
 
 def get_uptime_seconds():
     return read_uptime_raw() - get_state()['initial_uptime_seconds']
