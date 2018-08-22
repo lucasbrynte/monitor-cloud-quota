@@ -1,0 +1,4 @@
+{
+    "budget_hours": 20,
+    "uptimed_records_file": "/var/spool/uptimed/records"
+}
