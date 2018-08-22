@@ -1,5 +1,5 @@
 # Pull latest release of monitor-cloud-quota tool
-git fetch && git reset --hard origin/latest-release
+sudo git fetch && sudo git reset --hard origin/latest-release
 
 # # Install any additional system requirements
 # sudo apt-get update

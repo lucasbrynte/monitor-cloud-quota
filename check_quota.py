@@ -8,4 +8,4 @@ print('{:.2f} / {} hours consumed.'.format(uptime_hours, conf['budget_hours']))
 
 if uptime_hours > conf['budget_hours']:
     print('Out of budget - shutting down machine.')
-    os.system('sudo poweroff')
+    # os.system('sudo poweroff')
