@@ -1,21 +1,25 @@
+import os
 import subprocess
 import json
 
-with open('conf.json', 'r') as f:
+def get_curr_dir():
+    return os.path.dirname(__file__)
+
+with open(os.path.join(get_curr_dir(), 'conf.json'), 'r') as f:
     conf = json.load(f)
 
 def get_conf():
     return conf
 
 def get_state():
-    with open('state.json', 'r') as f:
+    with open(os.path.join(get_curr_dir(), 'state.json'), 'r') as f:
         state = json.load(f)
     return state
 
 def update_state(update_dict):
     state = get_state()
     state.update(update_dict)
-    with open('state.json', 'w') as f:
+    with open(os.path.join(get_curr_dir(), 'state.json'), 'w') as f:
         json.dump(state, f)
 
 def read_uptime_raw():
