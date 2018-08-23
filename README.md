@@ -3,7 +3,7 @@
 ## Install dependencies
 ```
 sudo apt-get update
-sudo apt-get install tuptime
+sudo apt-get install -y tuptime
 ```
 
 ## Setup tool
@@ -41,4 +41,9 @@ value:
 ```
 #! /bin/bash
 echo 20 > /tmp/cloud_budget_hours
+```
+
+## Reset the timer
+```
+sudo python3 /monitor-cloud-quota/reset_state.py
 ```
