@@ -27,7 +27,7 @@ sudo crontab -e
 and enter:
 ```
 */10 * * * * python3 /monitor-cloud-quota/check_quota.py
-@reboot python3 /monitor-cloud-quota/update.sh
+@reboot /monitor-cloud-quota/update.sh
 ```
 
 ## Enable shutdown feature
