@@ -31,6 +31,7 @@ and enter:
 ```
 
 ## Enable shutdown feature
+In this example, a 20 hour budget is set.
 ## Add custom metadata to VM instance:
 key:
 ```
