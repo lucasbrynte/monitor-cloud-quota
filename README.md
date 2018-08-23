@@ -1,3 +1,5 @@
+# How to set up on a Google Cloud VM instance
+
 ## Install dependencies
 ```
 sudo apt-get update
@@ -6,7 +8,10 @@ sudo apt-get install tuptime
 
 ## Setup tool
 ```
-./setup.sh
+cd /
+sudo git clone -b latest-release https://github.com/lucasbrynte/monitor-cloud-quota.git
+cd monitor-cloud-quota
+sudo ./setup.sh
 ```
 
 ## Run at login - visible to user
