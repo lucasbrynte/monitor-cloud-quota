@@ -14,9 +14,14 @@ cd monitor-cloud-quota
 sudo ./setup.sh
 ```
 
+## Create symlink
+```
+sudo ln -s /monitor-cloud-quota/check_output /usr/local/bin/check_output
+```
+
 ## Run at login - visible to user
 ```
-sudo sh -c 'echo python3 /monitor-cloud-quota/check_quota.py >> /etc/bash.bashrc'
+sudo sh -c 'echo check_quota >> /etc/bash.bashrc'
 ```
 
 ## Schedule cron jobs
@@ -26,7 +31,7 @@ sudo crontab -e
 ```
 and enter:
 ```
-*/10 * * * * python3 /monitor-cloud-quota/check_quota.py
+*/10 * * * * check_quota
 @reboot /monitor-cloud-quota/update.sh
 ```
 
