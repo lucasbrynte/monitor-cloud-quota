@@ -23,7 +23,7 @@ def update_state(update_dict):
         json.dump(state, f)
 
 def read_uptime_raw():
-    cmd_list = ['tuptime', '-s']
+    cmd_list = ['LC_ALL=en_US.UTF-8', 'tuptime', '-s']
     identifier = 'System uptime:'
     tuptime_output = subprocess.check_output(cmd_list).decode('utf-8').splitlines()
     # print('\n'.join(tuptime_output))
