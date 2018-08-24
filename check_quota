@@ -1,2 +1,2 @@
 #! /bin/bash
-LC_ALL=en_US.UTF-8 python3 $(dirname $0)/check_quota.py
+LC_ALL=en_US.UTF-8 python3 /monitor-cloud-quota/check_quota.py
