@@ -1,4 +1,5 @@
 import os
+import misc
 
 conf = misc.get_conf()
 
