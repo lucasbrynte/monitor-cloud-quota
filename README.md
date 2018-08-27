@@ -21,7 +21,7 @@ sudo ln -s /monitor-cloud-quota/check_output /usr/local/bin/check_output
 
 ## Run at login - visible to user
 ```
-sudo sh -c 'echo check_quota >> /etc/bash.bashrc'
+sudo sh -c 'echo '"'"'check_quota || { /tmp/monitor-cloud-quota/cloud_budget_hours && echo Logging off. && exit; }'"'"' >> /etc/bash.bashrc'
 ```
 
 ## Schedule cron jobs
@@ -45,7 +45,7 @@ startup-script
 value:
 ```
 #! /bin/bash
-echo 20 > /tmp/cloud_budget_hours
+mkdir -p /tmp/monitor-cloud-quota && echo 20 > /tmp/monitor-cloud-quota/cloud_budget_hours && chmod -R 777 /tmp/monitor-cloud-quota
 ```
 
 ## Reset the timer

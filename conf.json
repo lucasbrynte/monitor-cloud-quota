@@ -1,4 +1,4 @@
 {
     "log_path": "/var/log/monitor-cloud-quota",
-    "budget_hours_file": "/tmp/cloud_budget_hours"
+    "budget_hours_file": "/tmp/monitor-cloud-quota/cloud_budget_hours"
 }
