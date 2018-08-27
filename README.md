@@ -21,7 +21,7 @@ sudo ln -s /monitor-cloud-quota/check_output /usr/local/bin/check_output
 
 ## Run at login - visible to user
 ```
-sudo sh -c 'echo '"'"'check_quota || { /tmp/monitor-cloud-quota/cloud_budget_hours && echo Logging off. && exit; }'"'"' >> /etc/bash.bashrc'
+sudo sh -c 'echo '"'"'check_quota || { rm /tmp/monitor-cloud-quota/cloud_budget_hours && echo Logging off. && exit; }'"'"' >> /etc/bash.bashrc'
 ```
 
 ## Schedule cron jobs
