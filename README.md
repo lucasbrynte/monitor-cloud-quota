@@ -31,7 +31,7 @@ sudo crontab -e
 ```
 and enter:
 ```
-*/10 * * * * check_quota
+*/3 * * * * /monitor-cloud-quota/check_quota || python3 /monitor-cloud-quota/out_of_budget_shutdown.py
 @reboot /monitor-cloud-quota/update.sh
 ```
 
