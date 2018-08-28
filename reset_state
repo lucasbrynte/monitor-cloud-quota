@@ -1,0 +1,2 @@
+#! /bin/bash
+LC_ALL=en_US.UTF-8 python3 /monitor-cloud-quota/reset_state.py

@@ -50,5 +50,5 @@ mkdir -p /tmp/monitor-cloud-quota && echo 20 > /tmp/monitor-cloud-quota/cloud_bu
 
 ## Reset the timer
 ```
-sudo python3 /monitor-cloud-quota/reset_state.py
+sudo /monitor-cloud-quota/reset_state
 ```
